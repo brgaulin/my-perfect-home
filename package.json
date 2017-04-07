@@ -1,0 +1,24 @@
+{
+  "name": "my-perfect-home",
+  "version": "1.0.0",
+  "description": "Help find your perfect home by drive times to work/family/etc.",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brgaulin/my-perfect-home.git"
+  },
+  "keywords": [
+    "home",
+    "house",
+    "google"
+  ],
+  "author": "Brendan Davis",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/brgaulin/my-perfect-home/issues"
+  },
+  "homepage": "https://github.com/brgaulin/my-perfect-home#readme"
+}
