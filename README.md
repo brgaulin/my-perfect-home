@@ -9,13 +9,7 @@ A US street address in json.
   "address": "1 Main St. Boston, MA 12345",
   "google_maps_apikey": "23iuy1h2u3h1i2i12u3ui21h3i",
   "destinations": {
-    "work1": {
-      "search_term": "My work, Cambridge, MA",
-      "times": {
-        "arrival": ["9am", "1pm"],
-        "depart": ["5pm"]
-      }
-    }
+    "work1": "My work, Cambridge, MA"
   }
 }
 ```
@@ -27,27 +21,22 @@ JSON Payload
   "destinations": {
     "work1": {
       "distance": "11.6 mi", // Distance in Miles
-      "time_arrive_9am": 72, // Time in minutes from input, to work1 if you were to arrive at 9am
-      "time_arrive_1pm": 45, // Time in minutes from input, to work1 if you were to arrive at 1pm
-      "time_depart_5pm": 72 // Time in minutes from work1, to input if you were to depart at 5pm
+      "time": "1hr 12 min", // Time in minutes from input, to work1
     },
     "work2": {
       "distance": "13 mi",
-      "time_1pm": 47,
-      "time_arrive_9am": 82,
-      "time_arrive_1pm": 57,
-      "time_depart_5pm": 65
+      "time": "1hr 30 min",
     },
     "nearest_train": { // TBD, for now uses standard google search
       "distance": "4 mi",
-      "time_arrive_8am": 15
+      "time": "15 min"
     }
   },
   "geo_coords": {
     "lat": 1234,
     "lng": 1234
   },
-  "address": "1 Main St. Boston, MA 12345"
+  "address": "1 Main St. Boston, MA"
 }
 ```
 
@@ -61,7 +50,9 @@ In the root folder create two files:
 2. .destinations.json and setup your destinations, ex. {"work1": {}, "work2":{}}
 
 ### Running the CLI
-node lib/main.js "1 Main St. Boston, MA 12345"
+```bash
+node lib/cli.js "1 Main St. Boston, MA"
+```
 
 ## Contributes
 1. Fork the Project
@@ -71,3 +62,6 @@ node lib/main.js "1 Main St. Boston, MA 12345"
 ## TODO
 Setup main.js as a webserver so we can pass the google key to the index.html
 write index.html
+
+## Important Note on Times
+Google maps public API does not support asking for their predictive traffic at this time. So for the simplicity of this tool, its going to just show current travel times.
